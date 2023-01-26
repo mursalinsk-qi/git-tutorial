@@ -2,9 +2,10 @@
   "name": "git-tutorial",
   "version": "1.0.0",
   "description": "git and git-workflow practice",
-  "main": "app.js",
+  "main": "app/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon app/server.js",
+    "start": "node app/server.js"
   },
   "repository": {
     "type": "git",
@@ -20,5 +21,8 @@
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "mongoose": "^6.9.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
   }
 }
