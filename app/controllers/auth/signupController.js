@@ -1,4 +1,5 @@
 const User=require('../../models/user');
+const bcrypt=require('bcryptjs');
 exports.registerUser = async (req, res, next) => {
     const { name, email, password } = req.body;
     const alreadyExists = await User.exists({ email });
@@ -8,7 +9,8 @@ exports.registerUser = async (req, res, next) => {
             message:'User Already Exists',
         });
     }
-    const user = await User.create({ name, email, password });
+    const hashedPassedword=await bcrypt.hash(password,10);
+    const user = await User.create({ name, email, password:hashedPassedword });
     if (!user) {
         return res.status(404).json({
             status: false,
