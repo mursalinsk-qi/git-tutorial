@@ -1,6 +1,6 @@
 const User=require('../../models/user');
 
-exports.loginUser = asyncHandler(async (req, res, next) => {
+exports.loginUser = async (req, res, next) => {
     const { email, password } = req.body;
     const user = await User.findOne({ email });
     if (!user) {
@@ -23,4 +23,4 @@ exports.loginUser = asyncHandler(async (req, res, next) => {
         email: user.email,
     })
 
-})
+}
