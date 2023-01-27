@@ -1,5 +1,5 @@
 const User=require('../../models/user');
-
+const bcrypt=require('bcryptjs');
 exports.loginUser = async (req, res, next) => {
     const { email, password } = req.body;
     const user = await User.findOne({ email });
