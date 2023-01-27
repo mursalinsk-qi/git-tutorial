@@ -12,4 +12,5 @@ jobs:
       - name: install all dependency
         run: npm ci
       - name: deploy
-        run: npm start
+        run: echo "Deploying our app"
+
