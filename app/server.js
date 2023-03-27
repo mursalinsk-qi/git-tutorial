@@ -10,3 +10,5 @@ app.use(express.json())
 app.post('/api/register',registerUser);
 app.post('/api/login',loginUser);
 app.listen(PORT,()=>console.log(`server running on Port : ${PORT}`))
+
+// Fixing 1
